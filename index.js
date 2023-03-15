@@ -4,6 +4,7 @@ let i=0
 let winner=0 //1=win, 0=looser
 let arrPosition=[""]
 let endgame=false
+let start=0
 
 
 function acqSymb(){
@@ -160,7 +161,10 @@ function nowinner(){
     arrPosition[i-1]=symb
     document.getElementById(id).value=symb
     winner=checkSolution()
+    if(start!=0){
     if(endgame==true || nowinner()==true){
     reset()
     }
+}
+    start=1
 }
