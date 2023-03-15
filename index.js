@@ -137,6 +137,20 @@ function checkSolution(){
             winner=0
             return winner
 }
+function nowinner(){
+    let i=0;
+    let counter=0
+    for(i=0;i<9;i++){
+        if(arrPosition[i]!="")
+            counter=counter+1
+    }
+    if(counter==9){
+        alert("Draw")
+        return true
+    }
+    else
+    return false
+}
 
 
 
@@ -146,7 +160,7 @@ function checkSolution(){
     arrPosition[i-1]=symb
     document.getElementById(id).value=symb
     winner=checkSolution()
-    if(endgame==true){
+    if(endgame==true || nowinner()==true){
     reset()
     }
 }
